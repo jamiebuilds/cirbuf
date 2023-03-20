@@ -1,0 +1,35 @@
+{
+	"name": "cirbuf",
+	"version": "0.0.0",
+	"description": "A tiny and fast circular buffer",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "rm -rf dist && tsc",
+		"bench": "npm run build && bencher ./benchmarks/*.js",
+		"prepublishOnly": "npm run build"
+	},
+	"keywords": [
+		"circular",
+		"buffer",
+		"push",
+		"truncate",
+		"shift",
+		"pop",
+		"array",
+		"data",
+		"structure",
+		"queue",
+		"forget",
+		"fast",
+		"perf",
+		"performance",
+		"memory",
+		"efficient"
+	],
+	"author": "Jamie Kyle <me@thejameskyle.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@indutny/bencher": "^1.2.0",
+		"typescript": "^5.0.2"
+	}
+}
