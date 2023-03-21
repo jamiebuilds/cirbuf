@@ -3,9 +3,9 @@ let max = 10_000
 
 module.exports = () => {
 	let array = []
-	for (let i = 0; i < 100_000; i++) {
+	for (let i = 0; i < iterations; i++) {
 		array.push(i)
-		if (array.length > 10_000) {
+		if (array.length > max) {
 			array.shift()
 		}
 	}
