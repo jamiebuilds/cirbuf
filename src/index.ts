@@ -1,13 +1,11 @@
 export class CircularBuffer<T> {
 	#data: Array<T>
-	#next: number
-	#overflow: boolean
+	#next: number = 0
+	#overflow: boolean = false
 	#maxSize: number
 
 	constructor(maxSize: number) {
 		this.#data = new Array(maxSize)
-		this.#next = 0
-		this.#overflow = false
 		this.#maxSize = maxSize
 	}
 
@@ -34,10 +32,6 @@ export class CircularBuffer<T> {
 			// Create a copy of the array
 			return this.#data.slice(0, this.#next)
 		}
-
-		let end = this.#data.slice(0, this.#next)
-		let start = this.#data.slice(this.#next)
-
-		return start.concat(end)
+		return this.#data.slice(this.#next).concat(this.#data.slice(0, this.#next))
 	}
 }
