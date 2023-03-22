@@ -30,7 +30,7 @@ export class CircularBuffer<T> {
 	}
 
 	toArray(): Array<T> {
-		if (this.size < this.#maxSize) {
+		if (!this.#overflow) {
 			// Create a copy of the array
 			return this.#data.slice(0, this.size)
 		}
