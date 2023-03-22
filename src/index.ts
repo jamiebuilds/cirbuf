@@ -32,7 +32,7 @@ export class CircularBuffer<T> {
 	toArray(): Array<T> {
 		if (!this.#overflow) {
 			// Create a copy of the array
-			return this.#data.slice(0, this.size)
+			return this.#data.slice(0, this.#next)
 		}
 
 		let end = this.#data.slice(0, this.#next)
